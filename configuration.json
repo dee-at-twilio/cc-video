@@ -1,0 +1,52 @@
+{
+    "ivr": {
+        "text": "Thanks for calling. You can press a key or say the department name. Press 1 for Sales, press 2 for Support",
+        "options": [
+            {
+                "friendlyName": "Sales",
+                "digit": 1,
+                "id": "sales"
+            },
+            {
+                "friendlyName": "Support",
+                "digit": 2,
+                "id": "support"
+            }
+        ]
+    },
+    "queues": [
+        {
+            "friendlyName": "Chat Queue",
+            "filterFriendlyName": "Chat",
+            "id": "chat",
+            "taskQueueSid": "WQb0c4244163d5c7e36ebc1d92b9e87951",
+            "expression": "channel == \"chat\"",
+            "targetWorkerExpression": ""
+        },
+        {
+            "friendlyName": "Phone Queue",
+            "filterFriendlyName": "Phone",
+            "id": "phone",
+            "taskQueueSid": "WQ40d182a4e0257bbb621765187bba9291",
+            "expression": "channel == \"phone\"",
+            "targetWorkerExpression": "task.team == worker.team OR task.transferToWorkerSid = worker.sid"
+        },
+        {
+            "friendlyName": "Video Queue",
+            "filterFriendlyName": "Video",
+            "id": "video",
+            "taskQueueSid": "WQ1c3d3c7ae9f9f54d7e2202a1bb7ed616",
+            "expression": "channel == \"video\"",
+            "targetWorkerExpression": ""
+        }
+    ],
+    "twilio": {
+        "workerOfflineActivitySid": "WAdb32cfd428b3b45cbd805b9d7421698b",
+        "workerAvailableActivitySid": "WAf4f18596bff11c3f9f6c8067b8abec60",
+        "workerUnavailableActivitySid": "WA0a24e6ca4498ed8c23d876b2cec67274",
+        "callerId": "+18326539014",
+        "applicationSid": "APdd538494498e8a84eb2527c91744d645",
+        "workflowSid": "WWcf8cbd0e8179793fc02d04dccec5ae1e",
+        "facebookPageId": null
+    }
+}
