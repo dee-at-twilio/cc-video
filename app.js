@@ -12,7 +12,9 @@ let util
 
 if (isRunningOnHeroku()) {
 	console.log('application is running on Heroku')
-	util = require('./util-heroku-pg.js')
+	// util = require('./util-heroku-pg.js')
+	// util.createConfigurationIfNotExists()
+	util = require('./util-file.js')
 } else if (isRunningOnGoogle()) {
 	console.log('application is running on Google App Engine')
 	util = require('./util-google-cloud-datastore.js')

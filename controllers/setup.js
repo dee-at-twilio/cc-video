@@ -89,6 +89,7 @@ const createOrUpdateWorkflow = async (sid, queues) => {
 		configuration: JSON.stringify(workflow)
 	};
 
+	console.log(sid);
 	if (sid) {
 		return client.taskrouter.workspaces(process.env.TWILIO_WORKSPACE_SID).workflows(sid).update(payload);
 	} else {
